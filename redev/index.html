@@ -65,8 +65,8 @@
 <body>
   <main>
     <h1><span>Redev</span></h1>
-    <p class="tagline">Redev is a Chrome extension that integrates an AI chat
-    assistant directly into
+    <p class="tagline">Redev is a developer tool for inspecting and debugging
+    React applications. It integrates an AI chat assistant directly into
     <a href="https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React DevTools</a>
     to help you analyze React component hierarchies and debug performance
     bottlenecks.</p>
@@ -74,7 +74,8 @@
     <a class="video" href="https://www.youtube.com/watch?v=2YznhZh3Isg">▶️ Watch the Redev Motivation Video</a>
 
     <h2>What it does</h2>
-    <p>Redev extends React DevTools with a chat interface:</p>
+    <p>Redev extends React DevTools with a chat interface. It does the
+    following:</p>
     <ul>
       <li><strong>Context-Aware Insights</strong> — answers complex questions
       about your React performance data, offering deep insights into
@@ -82,28 +83,22 @@
       <li><strong>Source Code Bridging</strong> — connects your raw source code
       directly to live runtime outputs like the Fiber tree. Its built-in tool
       calling allows the AI agent to inspect component source code. This is
-      crucial: React composes through <code>children</code>, so in the source
-      alone you can't tell what those children are — Redev resolves them from
-      the runtime output. Knowing a component's runtime output <em>plus</em>
-      its source gives your agents far better context.</li>
+      crucial: React provides a way to compose through passing
+      <code>children</code>, and in the source code you don't know what those
+      children are — but in Redev it's determined, because Redev shows the
+      runtime output. Knowing a component's output plus its source code gives
+      better context to your agents.</li>
       <li><strong>Automated Optimization</strong> — suggests specific code
       changes and automatically generates prompts packed with performance
       insights, ready for your coding agent to execute.</li>
       <li><strong>Deep Component Inspection</strong> — delivers detailed
       technical information about any component in your application
       hierarchy.</li>
-      <li><strong>Bring your own AI provider</strong> — works with a local
-      Ollama instance (fully offline) or a
+      <li><strong>Bring Your Own Model</strong> — works with a local Ollama
+      instance (fully offline) or a
       <a href="https://openai.com/codex/">Codex subscription</a>. Your data
       goes to the provider you configure, and nowhere else.</li>
     </ul>
-
-    <img
-      class="screenshot"
-      src="https://github.com/user-attachments/assets/53392e66-3d83-401c-9351-31109e59025c"
-      width="1512"
-      height="900"
-      alt="Redev AI chat assistant inside React DevTools analyzing a component tree" />
 
     <h2>Privacy</h2>
     <p>Redev has no servers, no telemetry, and no analytics. Debugging context
