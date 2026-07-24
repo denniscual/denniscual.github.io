@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redev — AI chat assistant for React DevTools</title>
+  <meta name="description" content="Redev integrates an AI chat assistant directly into React DevTools to analyze component hierarchies and debug performance bottlenecks." />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --text: #e6edf3;
+      --dim: #8b949e;
+      --accent: #4cc2c4;
+      --border: #30363d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+    main { max-width: 680px; margin: 0 auto; padding: 4rem 1.25rem; }
+    h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+    h1 span { color: var(--accent); }
+    .tagline { color: var(--dim); font-size: 1.05rem; margin: 0 0 2rem; }
+    h2 { font-size: 1.15rem; margin: 2.25rem 0 0.5rem; }
+    p { margin: 0.5rem 0; }
+    ul { margin: 0.5rem 0; padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    .dim { color: var(--dim); }
+    .links { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .links a {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 0.55rem 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .links a:hover { border-color: var(--accent); color: var(--accent); }
+    a { color: var(--accent); }
+    footer { margin-top: 3.5rem; color: var(--dim); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1><span>Redev</span></h1>
+    <p class="tagline">React DevTools with an AI chat assistant built in —
+    analyze component hierarchies and debug performance bottlenecks without
+    leaving Chrome DevTools.</p>
+
+    <h2>What it does</h2>
+    <ul>
+      <li><strong>Components &amp; Profiler panels</strong> — the full React
+      DevTools experience: inspect the component tree, view and edit
+      props/state/hooks, profile rendering performance.</li>
+      <li><strong>AI assistant in the panel</strong> — ask questions about the
+      inspected app ("Why is this component re-rendering?", "Show me this
+      component's implementation") and the assistant inspects trees, profiles,
+      and source maps to answer with evidence.</li>
+      <li><strong>Reads original source</strong> — when the inspected app ships
+      source maps, the assistant reads the original component source, not the
+      minified bundle.</li>
+      <li><strong>Bring your own AI provider</strong> — works with a local
+      Ollama instance (fully offline) or an OpenAI account. Your data goes to
+      the provider you configure, and nowhere else.</li>
+    </ul>
+
+    <h2>Privacy</h2>
+    <p>Redev has no servers, no telemetry, and no analytics. Debugging context
+    is sent only to the AI provider you explicitly configure, only when you ask
+    a question. Read the full <a href="/redev/privacy">privacy policy</a>.</p>
+
+    <div class="links">
+      <a href="https://github.com/denniscual/redev">Source on GitHub</a>
+      <a href="/redev/privacy">Privacy policy</a>
+    </div>
+
+    <footer>Built on the open-source React DevTools. Maintained by
+    <a href="https://github.com/denniscual">Dennis Cual</a>.</footer>
+  </main>
+</body>
+</html>

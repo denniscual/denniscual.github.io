@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redev — Privacy Policy</title>
+  <meta name="description" content="Privacy policy for Redev, the AI chat assistant for React DevTools." />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --text: #e6edf3;
+      --dim: #8b949e;
+      --accent: #4cc2c4;
+      --border: #30363d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 4rem 1.25rem; }
+    h1 { font-size: 1.75rem; margin: 0 0 0.25rem; }
+    .updated { color: var(--dim); margin: 0 0 2rem; }
+    h2 { font-size: 1.2rem; margin: 2.25rem 0 0.5rem; }
+    h3 { font-size: 1.02rem; margin: 1.5rem 0 0.35rem; }
+    p { margin: 0.5rem 0; }
+    ul { margin: 0.5rem 0; padding-left: 1.25rem; }
+    li { margin: 0.3rem 0; }
+    a { color: var(--accent); }
+    table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
+    th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
+    th { background: var(--panel); }
+    .callout {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 0.9rem 1.1rem;
+      margin: 1.25rem 0;
+    }
+    .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+    .breadcrumb a { color: var(--dim); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="breadcrumb"><a href="/redev/">← Redev</a></nav>
+
+    <h1>Redev Privacy Policy</h1>
+    <p class="updated">Last updated: July 25, 2026</p>
+
+    <p>Redev ("the extension") is a developer tool for inspecting and debugging
+    React applications, with an AI chat assistant integrated into its Chrome
+    DevTools panels. This policy describes what data the extension handles and
+    where that data goes.</p>
+
+    <div class="callout">
+      <p><strong>The short version:</strong> Redev has no servers, no
+      telemetry, and no analytics. The developer of Redev never receives,
+      stores, or has access to any of your data. Data leaves your browser in
+      exactly one case: when <em>you</em> ask the AI assistant a question, the
+      relevant debugging context is sent to the <em>AI provider you explicitly
+      configured</em>. If you configure a local provider (such as Ollama
+      running on your own machine), nothing leaves your computer at all.</p>
+    </div>
+
+    <h2>Data handled by the extension</h2>
+
+    <h3>Inspected page content ("website content")</h3>
+    <p>When you open the Redev panels in Chrome DevTools, the extension reads
+    data from the page being inspected: the React component tree, component
+    names, props, state, hooks, rendering performance measurements, and — when
+    the page publishes source maps — original source file contents. This data
+    is displayed to you inside DevTools.</p>
+    <p>When you ask the AI assistant a question, the parts of this data needed
+    to answer it (for example a component subtree, a source code excerpt, or
+    profiling measurements), together with your question, are sent to the AI
+    provider configured in Settings → AI. They are sent only when you submit a
+    question, and only to that provider.</p>
+
+    <h3>User activity during profiling (optional)</h3>
+    <p>If you enable "Record user interaction events while profiling" in
+    Settings → AI (off by default), profiles additionally record interaction
+    event types (for example click, scroll, key event) and their timestamps to
+    help correlate interactions with renders. Key values, input text, and
+    event targets are never recorded. This data is part of the profiling
+    context that may be sent to your configured AI provider when you ask a
+    question about a profile.</p>
+
+    <h3>Settings and credentials</h3>
+    <p>Your preferences (panel settings, chosen AI provider, base URL, model
+    name, enabled skills) are stored locally in your browser profile using
+    extension storage. If you sign in to an AI provider (for example with an
+    OpenAI account), the resulting tokens are stored locally in your browser
+    and are sent only to that provider to authenticate your requests. The
+    developer of Redev never receives your credentials.</p>
+
+    <h2>Where data goes</h2>
+    <table>
+      <tr><th>Data</th><th>Destination</th></tr>
+      <tr><td>Everything you inspect</td><td>Displayed locally in DevTools</td></tr>
+      <tr><td>Chat questions + debugging context</td><td>Only the AI provider you configured, only when you ask</td></tr>
+      <tr><td>Settings and credentials</td><td>Stored locally in your browser</td></tr>
+      <tr><td>Anything at all</td><td><strong>Never</strong> to servers operated by the Redev developer — none exist</td></tr>
+    </table>
+    <p>Data sent to an AI provider is processed under that provider's own
+    terms and privacy policy (for example OpenAI's, or no third party at all
+    when using a local Ollama instance). Choose a provider you trust with the
+    content of the pages you debug.</p>
+
+    <h2>What the extension does not do</h2>
+    <ul>
+      <li>No telemetry, analytics, crash reporting, or usage tracking of any kind.</li>
+      <li>No selling or sharing of data with third parties.</li>
+      <li>No use of data for advertising, profiling, creditworthiness, or lending.</li>
+      <li>No collection of browsing history, location, or personal information.</li>
+      <li>No remote code: all executable code ships inside the extension package.</li>
+    </ul>
+
+    <h2>Data retention</h2>
+    <p>The Redev developer retains nothing, because nothing is ever
+    transmitted to the Redev developer. Locally stored settings and
+    conversation state can be removed at any time by clearing the chat,
+    signing out of a provider, or uninstalling the extension. Retention of
+    data you send to an AI provider is governed by that provider's policy.</p>
+
+    <h2>Changes</h2>
+    <p>Changes to this policy will be published on this page, with the "Last
+    updated" date revised.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: open an issue at
+    <a href="https://github.com/denniscual/redev/issues">github.com/denniscual/redev/issues</a>.</p>
+  </main>
+</body>
+</html>
