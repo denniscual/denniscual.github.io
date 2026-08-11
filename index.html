@@ -36,12 +36,19 @@
       color: inherit;
     }
     .card:hover { border-color: var(--accent); }
-    .card h2 { margin: 0 0 0.25rem; font-size: 1.1rem; color: var(--accent); }
+    .card h3 { margin: 0 0 0.25rem; font-size: 1.1rem; color: var(--accent); }
     .card p { margin: 0; color: var(--dim); font-size: 0.95rem; }
-    section { margin-top: 3rem; }
-    section h2 { font-size: 1.1rem; margin: 0 0 0.35rem; }
-    section p { margin: 0 0 0.75rem; color: var(--dim); font-size: 0.95rem; }
-    footer { margin-top: 3rem; color: var(--dim); font-size: 0.85rem; }
+    section { margin-bottom: 3rem; }
+    section h2 {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 1rem;
+    }
+    .links { list-style: none; margin: 0; padding: 0; }
+    .links li { margin: 0 0 0.6rem; }
+    .links span { color: var(--dim); font-size: 0.95rem; }
     a { color: var(--accent); }
   </style>
 </head>
@@ -50,30 +57,32 @@
     <h1>Dennis Cual</h1>
     <p class="tagline">Frontend engineer.</p>
 
-    <div class="cards">
-      <a class="card" href="/redev/">
-        <h2>Redev</h2>
-        <p>React DevTools with an integrated AI chat assistant — inspect component
-        trees, profile renders, and debug with AI directly inside Chrome DevTools.</p>
-      </a>
-
-      <a class="card" href="https://github.com/denniscual/spinpack">
-        <h2>Spinpack</h2>
-        <p>A CLI that migrates Create React App projects to Rspack, the Rust-based
-        bundler — much faster dev server startup and rebuilds, same CRA workflow.</p>
-      </a>
-    </div>
-
     <section>
-      <h2>YouTube</h2>
-      <p>I make videos about React performance — how to find what's actually slow,
-      and how to fix it.</p>
-      <a href="https://www.youtube.com/@denniscual4618">youtube.com/@denniscual4618</a>
+      <h2>Projects</h2>
+      <div class="cards">
+        <a class="card" href="/redev/">
+          <h3>Redev</h3>
+          <p>React DevTools with an integrated AI chat assistant — inspect component
+          trees, profile renders, and debug with AI directly inside Chrome DevTools.</p>
+        </a>
+
+        <a class="card" href="https://github.com/denniscual/spinpack">
+          <h3>Spinpack</h3>
+          <p>A CLI that migrates Create React App projects to Rspack, the Rust-based
+          bundler — much faster dev server startup and rebuilds, same CRA workflow.</p>
+        </a>
+      </div>
     </section>
 
-    <footer>
-      <a href="https://github.com/denniscual">GitHub</a>
-    </footer>
+    <section>
+      <h2>Links</h2>
+      <ul class="links">
+        <li><a href="https://www.youtube.com/@denniscual4618">YouTube</a>
+        <span>— videos on React performance</span></li>
+        <li><a href="https://www.linkedin.com/in/denniscual1992/">LinkedIn</a></li>
+        <li><a href="https://github.com/denniscual">GitHub</a></li>
+      </ul>
+    </section>
   </main>
 </body>
 </html>
